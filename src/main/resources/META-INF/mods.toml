@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="MIT"
+[[mods]]
+modId="psychedelicraft"
+version="${file.jarVersion}"
+displayName="Psychedelicraft Reborn"
+logoFile="examplemod.png"
+credits="Original Psychedelicraft"
+authors="Beeftaquitos"
+description='''
+A mod by Beeftaquitos
+'''
+[[dependencies.psychedelicraft]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.psychedelicraft]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"
