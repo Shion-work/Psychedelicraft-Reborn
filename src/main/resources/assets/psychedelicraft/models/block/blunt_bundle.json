@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "psychedelicraft:block/blunt_bundle_top",
+    "bottom": "psychedelicraft:block/blunt_bundle_bottom",
+    "side": "psychedelicraft:block/blunt_bundle_side"
+  }
+}
