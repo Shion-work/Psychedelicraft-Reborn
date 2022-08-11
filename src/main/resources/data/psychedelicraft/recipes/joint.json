@@ -1,23 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "XRX",
     "X#X",
-    "XRX"
+    "X#X",
+    "X#X"
   ],
   "key": {
-    "R": {
-      "item": "psychedelicraft:dried_cannabis_bud"
-    },
     "#": {
-      "item": "psychedelicraft:dried_tobacco_leaf"
+      "item": "psychedelicraft:dried_cannabis_bud"
     },
     "X": {
       "item": "minecraft:paper"
     }
   },
   "result": {
-    "item": "psychedelicraft:blunt",
+    "item": "psychedelicraft:joint",
     "count": 3
   }
 }

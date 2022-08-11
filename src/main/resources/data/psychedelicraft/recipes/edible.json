@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "BEB",
+    "CDC"
+  ],
+  "key": {
+    "A": {
+      "item": "psychedelicraft:dried_cannabis_leaf"
+    },
+    "B": {
+      "item": "minecraft:sugar"
+    },
+    "C": {
+      "item": "minecraft:wheat"
+    },
+    "D": {
+      "item": "minecraft:milk_bucket"
+    },
+    "E": {
+      "item": "minecraft:egg"
+    }
+  },
+  "result": {
+    "item": "psychedelicraft:edible"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "psychedelicraft:edible"
+    }
+  },
+  "result": {
+    "item": "psychedelicraft:edible_block"
+  }
+}

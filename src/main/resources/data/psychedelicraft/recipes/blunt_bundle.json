@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "psychedelicraft:blunt"
+    }
+  },
+  "result": {
+    "item": "psychedelicraft:blunt_bundle"
+  }
+}
