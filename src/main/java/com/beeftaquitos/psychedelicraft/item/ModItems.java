@@ -1,9 +1,10 @@
 package com.beeftaquitos.psychedelicraft.item;
 
 import com.beeftaquitos.psychedelicraft.Psychedelicraft;
+import com.beeftaquitos.psychedelicraft.item.custom.AsbestosSwordItem;
 import com.beeftaquitos.psychedelicraft.item.custom.CoalCokeItem;
 import com.beeftaquitos.psychedelicraft.item.custom.DowsingRodItem;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -59,6 +60,29 @@ public class ModItems {
 
     public static final RegistryObject<Item> COAL_COKE = ITEMS.register("coal_coke",
             () -> new CoalCokeItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+    public static final RegistryObject<Item> ASBESTOS_SWORD = ITEMS.register("asbestos_sword",
+            () -> new AsbestosSwordItem(ModTiers.ASBESTOS, 2, 3f,
+                    new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+    public static final RegistryObject<Item> ASBESTOS_PICKAXE = ITEMS.register("asbestos_pickaxe",
+            () -> new PickaxeItem(ModTiers.ASBESTOS, 1, 1f,
+                    new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+    public static final RegistryObject<Item> ASBESTOS_SHOVEL = ITEMS.register("asbestos_shovel",
+            () -> new ShovelItem(ModTiers.ASBESTOS, 0, 1f,
+                    new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+    public static final RegistryObject<Item> ASBESTOS_AXE = ITEMS.register("asbestos_axe",
+            () -> new AxeItem(ModTiers.ASBESTOS, 4, 0f,
+                    new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+    public static final RegistryObject<Item> ASBESTOS_HOE = ITEMS.register("asbestos_hoe",
+            () -> new HoeItem(ModTiers.ASBESTOS, 0, 0f,
+                    new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
