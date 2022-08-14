@@ -4,7 +4,13 @@ import com.beeftaquitos.psychedelicraft.Psychedelicraft;
 import com.beeftaquitos.psychedelicraft.item.custom.AsbestosSwordItem;
 import com.beeftaquitos.psychedelicraft.item.custom.CoalCokeItem;
 import com.beeftaquitos.psychedelicraft.item.custom.DowsingRodItem;
+import com.beeftaquitos.psychedelicraft.item.custom.ModArmorItem;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -80,6 +86,25 @@ public class ModItems {
     public static final RegistryObject<Item> ASBESTOS_HOE = ITEMS.register("asbestos_hoe",
             () -> new HoeItem(ModTiers.ASBESTOS, 0, 0f,
                     new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+    public static final RegistryObject<Item> MOGUS_HELMET = ITEMS.register("mogus_helmet",
+            () -> new ModArmorItem(ModArmorMaterials.MOGUS, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+    public static final RegistryObject<Item> MOGUS_CHESTPLATE = ITEMS.register("mogus_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.MOGUS, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+    public static final RegistryObject<Item> MOGUS_LEGGINGS = ITEMS.register("mogus_leggings",
+            () -> new ArmorItem(ModArmorMaterials.MOGUS, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+    public static final RegistryObject<Item> MOGUS_BOOTS = ITEMS.register("mogus_boots",
+            () -> new ArmorItem(ModArmorMaterials.MOGUS, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+    public static final RegistryObject<Item> GOLD_PLATED_MOGUS = ITEMS.register("gold_plated_mogus",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
 
 
 

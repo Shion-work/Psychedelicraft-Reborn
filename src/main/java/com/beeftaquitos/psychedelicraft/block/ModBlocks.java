@@ -5,6 +5,7 @@ import com.beeftaquitos.psychedelicraft.block.custom.DryingTableBlock;
 import com.beeftaquitos.psychedelicraft.block.custom.SpeedyBlock;
 import com.beeftaquitos.psychedelicraft.item.ModCreativeModeTab;
 import com.beeftaquitos.psychedelicraft.item.ModItems;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -58,6 +59,20 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> MOGUS_FENCE_GATE = registerBlock("mogus_fence_gate",
             () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+
+    public static final RegistryObject<Block> MOGUS_FLOWER = registerBlock("mogus_flower",
+            () -> new FlowerBlock(MobEffects.HUNGER, 5,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION).noOcclusion()), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+
+    public static final RegistryObject<Block> POTTED_MOGUS_FLOWER = registerBlockWithoutBlockItem("potted_mogus_flower",
+            () -> new FlowerPotBlock(null, ModBlocks.MOGUS_FLOWER,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
+
+
+
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
+    }
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

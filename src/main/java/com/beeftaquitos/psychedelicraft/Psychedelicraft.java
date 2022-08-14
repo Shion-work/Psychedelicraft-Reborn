@@ -3,11 +3,13 @@ package com.beeftaquitos.psychedelicraft;
 import com.beeftaquitos.psychedelicraft.block.ModBlocks;
 import com.beeftaquitos.psychedelicraft.effect.ModEffects;
 import com.beeftaquitos.psychedelicraft.item.ModItems;
+import com.beeftaquitos.psychedelicraft.painting.ModPaintings;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -35,7 +37,12 @@ public class Psychedelicraft {
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
 
+        ModPaintings.register(eventBus);
+
         ModEffects.register((eventBus));
+
+        eventBus.addListener(this::setup);
+        eventBus.addListener(this::clientSetup);
 
 
         // Register ourselves for server and other game events we are interested in
@@ -45,11 +52,13 @@ public class Psychedelicraft {
     private void clientSetup(final FMLCommonSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DRYING_TABLE_BLOCK.get(), RenderType.translucent());
 
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOGUS_FLOWER.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_MOGUS_FLOWER.get(), RenderType.cutout());
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        event.enqueueWork(() -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.MOGUS_FLOWER.getId(), ModBlocks.POTTED_MOGUS_FLOWER);
+        });
     }
 }
