@@ -32,8 +32,6 @@ public class ModPaintings {
     public static final RegistryObject<Motive> GUS =
             PAINTING_MOTOVIES.register("gus", () -> new Motive(32, 32));
 
-    public static final RegistryObject<Motive> OBAMA =
-            PAINTING_MOTOVIES.register("obama", () -> new Motive(64, 64));
     public static void register(IEventBus eventBus) {
         PAINTING_MOTOVIES.register(eventBus);
     }

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "psychedelicraft:mogus_logs"
+    }
+  ],
+  "result": {
+    "item": "psychedelicraft:mogus_planks",
+    "count": 4
+  }
+}

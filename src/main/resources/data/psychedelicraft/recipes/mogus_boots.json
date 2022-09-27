@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X X",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "psychedelicraft:gold_plated_mogus"
+    }
+  },
+  "result": {
+    "item": "psychedelicraft:mogus_boots"
+  }
+}

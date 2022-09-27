@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_stairs",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "psychedelicraft:mogus_planks"
+    }
+  },
+  "result": {
+    "item": "psychedelicraft:mogus_stairs",
+    "count": 4
+  }
+}
