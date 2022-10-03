@@ -1,6 +1,7 @@
 package com.beeftaquitos.psychedelicraft.block;
 
 import com.beeftaquitos.psychedelicraft.Psychedelicraft;
+import com.beeftaquitos.psychedelicraft.block.custom.CannabisPlantBlock;
 import com.beeftaquitos.psychedelicraft.block.custom.DryingTableBlock;
 import com.beeftaquitos.psychedelicraft.block.custom.SpeedyBlock;
 import com.beeftaquitos.psychedelicraft.item.ModCreativeModeTab;
@@ -67,6 +68,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> POTTED_MOGUS_FLOWER = registerBlockWithoutBlockItem("potted_mogus_flower",
             () -> new FlowerPotBlock(null, ModBlocks.MOGUS_FLOWER,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
+
+    public static final RegistryObject<Block> MOGUS_GLASS = registerBlock("mogus_glass",
+            () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+
+    public static final RegistryObject<Block> CANNABIS_PLANT = registerBlockWithoutBlockItem("cannabis_plant",
+            () -> new CannabisPlantBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()));
 
 
 

@@ -1,6 +1,7 @@
 package com.beeftaquitos.psychedelicraft.item;
 
 import com.beeftaquitos.psychedelicraft.Psychedelicraft;
+import com.beeftaquitos.psychedelicraft.block.ModBlocks;
 import com.beeftaquitos.psychedelicraft.item.custom.AsbestosSwordItem;
 import com.beeftaquitos.psychedelicraft.item.custom.CoalCokeItem;
 import com.beeftaquitos.psychedelicraft.item.custom.DowsingRodItem;
@@ -12,6 +13,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -106,8 +108,15 @@ public class ModItems {
     public static final RegistryObject<Item> GOLD_PLATED_MOGUS = ITEMS.register("gold_plated_mogus",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
 
+    public static final RegistryObject<Item> LUSCIOUS_SHROOM = ITEMS.register("luscious_shroom",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
 
+    public static final RegistryObject<Item> SUCCULENT_SHROOM = ITEMS.register("succulent_shroom",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
 
+    public static final RegistryObject<Item> CANNABIS_SEEDS = ITEMS.register("cannabis_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.CANNABIS_PLANT.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

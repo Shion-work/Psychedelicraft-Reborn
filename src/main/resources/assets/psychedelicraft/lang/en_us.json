@@ -15,7 +15,11 @@
   "item.psychedelicraft.brown_shroom": "Brown Shroom",
   "item.psychedelicraft.coal_coke": "Coal Coke",
   "item.psychedelicraft.gold_plated_mogus": "Gold Plated Mogus",
+  "item.psychedelicraft.luscious_shroom": "Luscious Shroom",
+  "item.psychedelicraft.succulent_shroom": "Succulent Shroom",
 
+  "item.psychedelicraft.cannabis_seeds": "Cannabis Seeds",
+  "block.psychedelicraft.cannabis_plant": "Cannabis Plant",
 
   "item.psychedelicraft.asbestos_sword": "Asbestos Sword",
   "item.psychedelicraft.asbestos_pickaxe": "Asbestos Pickaxe",
@@ -29,15 +33,15 @@
   "item.psychedelicraft.mogus_boots": "Mogus Boots",
 
 
-
-
   "block.psychedelicraft.edible_block": "Edible Block",
   "block.psychedelicraft.blunt_bundle": "Blunt Bundle",
   "block.psychedelicraft.chrysotile": "Chrysotile",
 
+
   "block.psychedelicraft.drying_table_block": "Drying Table",
   "block.psychedelicraft.speedy_block": "Speedy Block",
 
+  "block.psychedelicraft.mogus_glass": "Mogus Glass",
   "block.psychedelicraft.mogus_planks": "Mogus Planks",
   "block.psychedelicraft.mogus_stairs": "Mogus Stairs",
   "block.psychedelicraft.mogus_slab": "Mogus Slab",
@@ -46,6 +50,7 @@
 
   "block.psychedelicraft.mogus_flower": "Mogus Flower",
   "block.psychedelicraft.potted_mogus_flower": "Potted Mogus Flower",
+
 
 
   "effect.psychedelicraft.freeze": "freeze",
