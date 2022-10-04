@@ -6,6 +6,7 @@ import com.beeftaquitos.psychedelicraft.item.custom.AsbestosSwordItem;
 import com.beeftaquitos.psychedelicraft.item.custom.CoalCokeItem;
 import com.beeftaquitos.psychedelicraft.item.custom.DowsingRodItem;
 import com.beeftaquitos.psychedelicraft.item.custom.ModArmorItem;
+import com.beeftaquitos.psychedelicraft.sound.ModSounds;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
@@ -117,6 +118,19 @@ public class ModItems {
     public static final RegistryObject<Item> CANNABIS_SEEDS = ITEMS.register("cannabis_seeds",
             () -> new ItemNameBlockItem(ModBlocks.CANNABIS_PLANT.get(),
                     new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+    public static final RegistryObject<Item> MOGUS_TRAP_MUSIC_DISC = ITEMS.register("mogus_trap_music_disc",
+            () -> new RecordItem(4, ModSounds.MOGUS_TRAP,
+                    new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> SBOB_MUSIC_DISC = ITEMS.register("sbob_music_disc",
+            () -> new RecordItem(4, ModSounds.SBOB,
+                    new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> ENJOY_MINECRAFT_MUSIC_DISC = ITEMS.register("enjoy_minecraft_music_disc",
+            () -> new RecordItem(4, ModSounds.ENJOY_MINECRAFT,
+                    new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1).rarity(Rarity.RARE)));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

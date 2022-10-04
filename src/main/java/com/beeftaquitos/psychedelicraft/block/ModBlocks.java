@@ -6,6 +6,7 @@ import com.beeftaquitos.psychedelicraft.block.custom.DryingTableBlock;
 import com.beeftaquitos.psychedelicraft.block.custom.SpeedyBlock;
 import com.beeftaquitos.psychedelicraft.item.ModCreativeModeTab;
 import com.beeftaquitos.psychedelicraft.item.ModItems;
+import com.beeftaquitos.psychedelicraft.sound.ModSounds;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -46,20 +47,20 @@ public class ModBlocks {
                     .strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
 
     public static final RegistryObject<Block> MOGUS_PLANKS = registerBlock("mogus_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(ModSounds.MOGUS_SOUNDS)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
 
     public static final RegistryObject<Block> MOGUS_STAIRS = registerBlock("mogus_stairs",
             () -> new StairBlock(() -> ModBlocks.MOGUS_PLANKS.get().defaultBlockState(),
-                    BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+                    BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS).sound(ModSounds.MOGUS_SOUNDS)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
 
     public static final RegistryObject<Block> MOGUS_SLAB = registerBlock("mogus_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB).sound(ModSounds.MOGUS_SOUNDS)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
 
     public static final RegistryObject<Block> MOGUS_FENCE = registerBlock("mogus_fence",
-            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE).sound(ModSounds.MOGUS_SOUNDS)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
 
     public static final RegistryObject<Block> MOGUS_FENCE_GATE = registerBlock("mogus_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE).sound(ModSounds.MOGUS_SOUNDS)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
 
     public static final RegistryObject<Block> MOGUS_FLOWER = registerBlock("mogus_flower",
             () -> new FlowerBlock(MobEffects.HUNGER, 5,
@@ -70,7 +71,7 @@ public class ModBlocks {
                     BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
 
     public static final RegistryObject<Block> MOGUS_GLASS = registerBlock("mogus_glass",
-            () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+            () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(ModSounds.MOGUS_SOUNDS)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
 
     public static final RegistryObject<Block> CANNABIS_PLANT = registerBlockWithoutBlockItem("cannabis_plant",
             () -> new CannabisPlantBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()));

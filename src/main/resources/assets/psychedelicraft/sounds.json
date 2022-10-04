@@ -1,0 +1,56 @@
+{
+  "mogus_break": {
+    "subtitle": "psychedelicraft.mogus_break",
+    "sounds": [
+      "psychedelicraft:mogus_break"
+    ]
+  },
+  "mogus_step": {
+    "subtitle": "psychedelicraft.mogus_step",
+    "sounds": [
+      "psychedelicraft:mogus_step"
+    ]
+  },
+  "mogus_place": {
+    "subtitle": "psychedelicraft.mogus_place",
+    "sounds": [
+      "psychedelicraft:mogus_place"
+    ]
+  },
+  "mogus_hit": {
+    "subtitle": "psychedelicraft.mogus_hit",
+    "sounds": [
+      "psychedelicraft:mogus_hit"
+    ]
+  },
+  "mogus_fall": {
+    "subtitle": "psychedelicraft.mogus_fall",
+    "sounds": [
+      "psychedelicraft:mogus_fall"
+    ]
+  },
+  "mogus_trap": {
+    "sounds": [
+      {
+        "name": "psychedelicraft:mogus_trap",
+        "stream": true
+      }
+    ]
+  },
+  "sbob": {
+    "sounds": [
+      {
+        "name": "psychedelicraft:sbob",
+        "stream": true
+      }
+    ]
+  },
+  "enjoy_minecraft": {
+    "sounds": [
+      {
+        "name": "psychedelicraft:enjoy_minecraft",
+        "stream": true
+      }
+    ]
+  }
+}

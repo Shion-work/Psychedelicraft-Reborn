@@ -4,6 +4,7 @@ import com.beeftaquitos.psychedelicraft.block.ModBlocks;
 import com.beeftaquitos.psychedelicraft.effect.ModEffects;
 import com.beeftaquitos.psychedelicraft.item.ModItems;
 import com.beeftaquitos.psychedelicraft.painting.ModPaintings;
+import com.beeftaquitos.psychedelicraft.sound.ModSounds;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -40,6 +41,8 @@ public class Psychedelicraft {
         ModPaintings.register(eventBus);
 
         ModEffects.register((eventBus));
+
+        ModSounds.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
