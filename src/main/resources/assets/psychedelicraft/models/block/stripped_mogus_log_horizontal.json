@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "psychedelicraft:block/stripped_mogus_top",
+    "side": "psychedelicraft:block/stripped_mogus_log"
+  }
+}

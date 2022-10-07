@@ -62,6 +62,9 @@ public class Psychedelicraft {
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CANNABIS_PLANT.get(), RenderType.cutout());
 
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOGUS_LEAVES.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOGUS_SAPLING.get(), RenderType.cutout());
+
     }
 
     private void setup(final FMLCommonSetupEvent event) {

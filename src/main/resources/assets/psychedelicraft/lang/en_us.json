@@ -18,11 +18,11 @@
   "item.psychedelicraft.luscious_shroom": "Luscious Shroom",
   "item.psychedelicraft.succulent_shroom": "Succulent Shroom",
 
-  "item.psychedelicraft.mogus_trap_music_disc": "The Among?",
-  "item.psychedelicraft.mogus_trap_music_disc.desc": "Among Us Trap Remix",
-  "item.psychedelicraft.sbob_music_disc": "S B O B",
+  "item.psychedelicraft.mogus_trap_music_disc": "Music Disc",
+  "item.psychedelicraft.mogus_trap_music_disc.desc": "Among?",
+  "item.psychedelicraft.sbob_music_disc": "Music Disc",
   "item.psychedelicraft.sbob_music_disc.desc": "S B O B",
-  "item.psychedelicraft.enjoy_minecraft_music_disc": "How to Enjoy Minecraft More..",
+  "item.psychedelicraft.enjoy_minecraft_music_disc": "Music Disc",
   "item.psychedelicraft.enjoy_minecraft_music_disc.desc": "How to Enjoy Minecraft More..",
 
   "item.psychedelicraft.cannabis_seeds": "Cannabis Seeds",
@@ -54,6 +54,12 @@
   "block.psychedelicraft.mogus_slab": "Mogus Slab",
   "block.psychedelicraft.mogus_fence": "Mogus Fence",
   "block.psychedelicraft.mogus_fence_gate": "Mogus Fence Gate",
+  "block.psychedelicraft.mogus_log": "Mogus Log",
+  "block.psychedelicraft.mogus_wood": "Mogus Wood",
+  "block.psychedelicraft.stripped_mogus_log": "Stripped Mogus Log",
+  "block.psychedelicraft.stripped_mogus_wood": "Stripped Mogus Wood",
+  "block.psychedelicraft.mogus_leaves": "Mogus Leaves",
+  "block.psychedelicraft.mogus_sapling": "Mogus Sapling",
 
   "block.psychedelicraft.mogus_flower": "Mogus Flower",
   "block.psychedelicraft.potted_mogus_flower": "Potted Mogus Flower",

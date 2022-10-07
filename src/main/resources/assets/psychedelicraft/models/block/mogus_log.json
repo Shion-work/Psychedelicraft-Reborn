@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "psychedelicraft:block/mogus_log_top",
+    "side": "psychedelicraft:block/mogus_log"
+  }
+}

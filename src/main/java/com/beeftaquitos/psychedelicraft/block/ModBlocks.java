@@ -3,16 +3,22 @@ package com.beeftaquitos.psychedelicraft.block;
 import com.beeftaquitos.psychedelicraft.Psychedelicraft;
 import com.beeftaquitos.psychedelicraft.block.custom.CannabisPlantBlock;
 import com.beeftaquitos.psychedelicraft.block.custom.DryingTableBlock;
+import com.beeftaquitos.psychedelicraft.block.custom.ModFlammableRotatedPillarBlock;
 import com.beeftaquitos.psychedelicraft.block.custom.SpeedyBlock;
 import com.beeftaquitos.psychedelicraft.item.ModCreativeModeTab;
 import com.beeftaquitos.psychedelicraft.item.ModItems;
 import com.beeftaquitos.psychedelicraft.sound.ModSounds;
+import com.beeftaquitos.psychedelicraft.world.feature.tree.MogusTreeGrower;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -45,10 +51,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> SPEEDY_BLOCK = registerBlock("speedy_block",
             () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
-
+/*
     public static final RegistryObject<Block> MOGUS_PLANKS = registerBlock("mogus_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(ModSounds.MOGUS_SOUNDS)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
-
+*/
     public static final RegistryObject<Block> MOGUS_STAIRS = registerBlock("mogus_stairs",
             () -> new StairBlock(() -> ModBlocks.MOGUS_PLANKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS).sound(ModSounds.MOGUS_SOUNDS)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
@@ -75,6 +81,58 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CANNABIS_PLANT = registerBlockWithoutBlockItem("cannabis_plant",
             () -> new CannabisPlantBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()));
+
+    public static final RegistryObject<Block> MOGUS_LOG = registerBlock("mogus_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(ModSounds.MOGUS_SOUNDS)),
+            ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+
+    public static final RegistryObject<Block> MOGUS_WOOD = registerBlock("mogus_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(ModSounds.MOGUS_SOUNDS)),
+            ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+
+    public static final RegistryObject<Block> STRIPPED_MOGUS_LOG = registerBlock("stripped_mogus_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).sound(ModSounds.MOGUS_SOUNDS)),
+            ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+
+    public static final RegistryObject<Block> STRIPPED_MOGUS_WOOD = registerBlock("stripped_mogus_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).sound(ModSounds.MOGUS_SOUNDS)),
+            ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+
+    public static final RegistryObject<Block> MOGUS_PLANKS = registerBlock("mogus_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(ModSounds.MOGUS_SOUNDS)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return true;
+                }
+                @Override
+                public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 20;
+                }
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 5;
+                }
+            }, ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+
+    public static final RegistryObject<Block> MOGUS_LEAVES = registerBlock("mogus_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(ModSounds.MOGUS_SOUNDS)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return true;
+                }
+                @Override
+                public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 60;
+                }
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 30;
+                }
+            }, ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+
+    public static final RegistryObject<Block> MOGUS_SAPLING = registerBlock("mogus_sapling",
+            () -> new SaplingBlock(new MogusTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).sound(ModSounds.MOGUS_SOUNDS)),
+            ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
 
 
 

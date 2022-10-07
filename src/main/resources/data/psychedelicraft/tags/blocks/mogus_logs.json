@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "psychedelicraft:mogus_log",
+    "psychedelicraft:mogus_wood",
+    "psychedelicraft:stripped_mogus_log",
+    "psychedelicraft:stripped_mogus_wood"
+  ]
+}

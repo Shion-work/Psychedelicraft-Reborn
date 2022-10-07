@@ -1,0 +1,10 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/shipwreck_treasure"
+    }
+  ],
+  "addition": "psychedelicraft:sbob_music_disc",
+  "type": "psychedelicraft:sbob_music_disc_in_shipwreck_treasure"
+}

@@ -1,0 +1,10 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/end_city_treasure"
+    }
+  ],
+  "addition": "psychedelicraft:enjoy_minecraft_music_disc",
+  "type": "psychedelicraft:enjoy_minecraft_music_disc_in_end_city_treasure"
+}

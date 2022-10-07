@@ -1,0 +1,10 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/villager"
+    }
+  ],
+  "addition": "psychedelicraft:joint",
+  "type": "psychedelicraft:joint_from_villager"
+}
