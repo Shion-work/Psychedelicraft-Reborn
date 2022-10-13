@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "psychedelicraft:cannabis_leaf"
+    },
+    "title": "Leaves????????",
+    "description": "I wonder what you can do with this...",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "psychedelicraft:psychedelicraft",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "psychedelicraft:cannabis_leaf"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

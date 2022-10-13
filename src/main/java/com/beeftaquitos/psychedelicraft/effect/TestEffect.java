@@ -4,8 +4,8 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 
-public class CannabisEffect extends MobEffect {
-    public CannabisEffect(MobEffectCategory mobEffectCategory, int color) {
+public class TestEffect extends MobEffect {
+    public TestEffect(MobEffectCategory mobEffectCategory, int color) {
         super(mobEffectCategory, color);
     }
 

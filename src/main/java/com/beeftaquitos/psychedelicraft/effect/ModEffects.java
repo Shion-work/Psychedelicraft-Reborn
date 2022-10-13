@@ -18,6 +18,9 @@ public class ModEffects {
     public static final RegistryObject<MobEffect> CANNABIS_EFFECT = MOB_EFFECTS.register("cannabis_effect",
             () -> new CannabisEffect(MobEffectCategory.HARMFUL, 331111));
 
+    public static final RegistryObject<MobEffect> TEST_EFFECT = MOB_EFFECTS.register("test_effect",
+            () -> new TestEffect(MobEffectCategory.HARMFUL, 334411));
+
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
     }

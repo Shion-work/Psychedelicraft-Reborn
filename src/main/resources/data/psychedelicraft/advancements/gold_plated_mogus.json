@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "psychedelicraft:gold_plated_mogus"
+    },
+    "title": "Ah, the Gold Plated Mogus",
+    "description": "We wander closer and closer to the utopia we seek",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "psychedelicraft:psychedelicraft",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "psychedelicraft:gold_plated_mogus"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

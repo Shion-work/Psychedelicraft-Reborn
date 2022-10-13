@@ -11,6 +11,7 @@ import com.beeftaquitos.psychedelicraft.sound.ModSounds;
 import com.beeftaquitos.psychedelicraft.world.feature.tree.MogusTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -24,7 +25,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -41,20 +41,17 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.TNT).instabreak()), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
 
     public static final RegistryObject<Block> CHRYSOTILE = registerBlock("chrysotile",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+            () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(5f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
 
-    public static final RegistryObject<Block> DRYING_TABLE_BLOCK = registerBlock("drying_table_block",
-            () -> new DryingTableBlock(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE).noOcclusion()),
+    public static final RegistryObject<Block> DRYING_TABLE = registerBlock("drying_table",
+            () -> new DryingTableBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()),
                     ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
 
     public static final RegistryObject<Block> SPEEDY_BLOCK = registerBlock("speedy_block",
             () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
-/*
-    public static final RegistryObject<Block> MOGUS_PLANKS = registerBlock("mogus_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(ModSounds.MOGUS_SOUNDS)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
-*/
+
     public static final RegistryObject<Block> MOGUS_STAIRS = registerBlock("mogus_stairs",
             () -> new StairBlock(() -> ModBlocks.MOGUS_PLANKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS).sound(ModSounds.MOGUS_SOUNDS)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);

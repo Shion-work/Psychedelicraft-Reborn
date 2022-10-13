@@ -131,6 +131,9 @@ public class ModItems {
             () -> new RecordItem(4, ModSounds.ENJOY_MINECRAFT,
                     new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1).rarity(Rarity.RARE)));
 
+    public static final RegistryObject<Item> BONG = ITEMS.register("bong",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1)));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

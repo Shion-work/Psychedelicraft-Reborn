@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "psychedelicraft:block/drying_table" },
+    "facing=east": { "model": "psychedelicraft:block/drying_table", "y": 90 },
+    "facing=south": {"model": "psychedelicraft:block/drying_table", "y":  180 },
+    "facing=west": {"model": "psychedelicraft:block/drying_table", "y":  270 }
+  }
+}

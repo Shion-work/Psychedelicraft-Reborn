@@ -4,14 +4,18 @@ import com.beeftaquitos.psychedelicraft.block.ModBlocks;
 import com.beeftaquitos.psychedelicraft.effect.ModEffects;
 import com.beeftaquitos.psychedelicraft.item.ModItems;
 import com.beeftaquitos.psychedelicraft.painting.ModPaintings;
+import com.beeftaquitos.psychedelicraft.potion.ModPotions;
 import com.beeftaquitos.psychedelicraft.sound.ModSounds;
+import com.beeftaquitos.psychedelicraft.util.BetterBrewingRecipe;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -40,7 +44,8 @@ public class Psychedelicraft {
 
         ModPaintings.register(eventBus);
 
-        ModEffects.register((eventBus));
+        ModEffects.register(eventBus);
+        ModPotions.register(eventBus);
 
         ModSounds.register(eventBus);
 
@@ -53,7 +58,7 @@ public class Psychedelicraft {
     }
 
     private void clientSetup(final FMLCommonSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.DRYING_TABLE_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.DRYING_TABLE.get(), RenderType.translucent());
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOGUS_FLOWER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_MOGUS_FLOWER.get(), RenderType.cutout());
@@ -70,6 +75,9 @@ public class Psychedelicraft {
     private void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.MOGUS_FLOWER.getId(), ModBlocks.POTTED_MOGUS_FLOWER);
+
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD,
+                    ModItems.GOLD_PLATED_MOGUS.get(), ModPotions.TEST_POTION.get()));
         });
     }
 }

@@ -28,6 +28,9 @@
   "item.psychedelicraft.cannabis_seeds": "Cannabis Seeds",
   "block.psychedelicraft.cannabis_plant": "Cannabis Plant",
 
+  "item.psychedelicraft.bong": "Bong",
+
+
   "item.psychedelicraft.asbestos_sword": "Asbestos Sword",
   "item.psychedelicraft.asbestos_pickaxe": "Asbestos Pickaxe",
   "item.psychedelicraft.asbestos_shovel": "Asbestos Shovel",
@@ -45,7 +48,7 @@
   "block.psychedelicraft.chrysotile": "Chrysotile",
 
 
-  "block.psychedelicraft.drying_table_block": "Drying Table",
+  "block.psychedelicraft.drying_table": "Drying Table",
   "block.psychedelicraft.speedy_block": "Speedy Block",
 
   "block.psychedelicraft.mogus_glass": "Mogus Glass",
@@ -67,6 +70,13 @@
 
 
   "effect.psychedelicraft.freeze": "freeze",
+  "item.minecraft.potion.effect.freeze_potion": "Freeze Potion",
+  "item.minecraft.splash_potion.effect.freeze_potion": "Splash Potion of Freeze",
+  "item.minecraft.lingering_potion.effect.freeze_potion": "Lingering Potion of Freeze",
+  "effect.psychedelicraft.test": "test",
+  "item.minecraft.potion.effect.test_potion": "Test Potion",
+  "item.minecraft.splash_potion.effect.test_potion": "Splash Potion of Test",
+  "item.minecraft.lingering_potion.effect.test_potion": "Lingering Potion of Test",
 
   "item.psychedelicraft.dowsing_rod.no_valuables": "No Valuables Found!",
 
