@@ -1,7 +1,6 @@
 package com.beeftaquitos.psychedelicraft.block.custom;
 
 import com.beeftaquitos.psychedelicraft.block.ModBlockEntities;
-import com.beeftaquitos.psychedelicraft.block.entity.DryingTableBlockEntity;
 import com.beeftaquitos.psychedelicraft.block.entity.ShroomBoxBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -25,13 +24,13 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
-public class DryingTableBlock extends BaseEntityBlock {
+public class ShroomBoxBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public DryingTableBlock(Properties properties) {
+    public ShroomBoxBlock(Properties properties) {
         super(properties);
     }
 
-    private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 9, 16);
+    private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 16, 16);
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
@@ -69,8 +68,8 @@ public class DryingTableBlock extends BaseEntityBlock {
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if (blockEntity instanceof DryingTableBlockEntity) {
-                ((DryingTableBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof ShroomBoxBlockEntity) {
+                ((ShroomBoxBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
@@ -81,8 +80,8 @@ public class DryingTableBlock extends BaseEntityBlock {
                                  Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof DryingTableBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer)pPlayer), (DryingTableBlockEntity)entity, pPos);
+            if(entity instanceof ShroomBoxBlockEntity) {
+                NetworkHooks.openGui(((ServerPlayer)pPlayer), (ShroomBoxBlockEntity)entity, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
@@ -94,13 +93,13 @@ public class DryingTableBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new DryingTableBlockEntity(pPos, pState);
+        return new ShroomBoxBlockEntity(pPos, pState);
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-        return createTickerHelper(pBlockEntityType, ModBlockEntities.DRYING_TABLE_BLOCK_ENTITY.get(),
-                DryingTableBlockEntity::tick);
+        return createTickerHelper(pBlockEntityType, ModBlockEntities.SHROOM_BOX_BLOCK_ENTITY.get(),
+                ShroomBoxBlockEntity::tick);
     }
 }

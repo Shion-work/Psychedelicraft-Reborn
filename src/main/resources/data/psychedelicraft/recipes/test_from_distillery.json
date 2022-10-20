@@ -1,0 +1,11 @@
+{
+  "type": "psychedelicraft:distilling",
+  "ingredients": [
+    {
+      "item": "psychedelicraft:gold_plated_mogus"
+    }
+  ],
+  "output": {
+    "item": "psychedelicraft:asbestos_sword"
+  }
+}

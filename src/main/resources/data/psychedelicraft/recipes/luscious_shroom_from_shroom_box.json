@@ -1,0 +1,11 @@
+{
+  "type": "psychedelicraft:juicing",
+  "ingredients": [
+    {
+      "item": "psychedelicraft:red_shroom"
+    }
+  ],
+  "output": {
+    "item": "psychedelicraft:luscious_shroom"
+  }
+}

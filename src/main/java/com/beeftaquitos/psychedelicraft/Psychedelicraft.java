@@ -1,21 +1,29 @@
 package com.beeftaquitos.psychedelicraft;
 
+import com.beeftaquitos.psychedelicraft.block.ModBlockEntities;
 import com.beeftaquitos.psychedelicraft.block.ModBlocks;
 import com.beeftaquitos.psychedelicraft.effect.ModEffects;
 import com.beeftaquitos.psychedelicraft.item.ModItems;
 import com.beeftaquitos.psychedelicraft.painting.ModPaintings;
 import com.beeftaquitos.psychedelicraft.potion.ModPotions;
+import com.beeftaquitos.psychedelicraft.recipe.ModRecipes;
+import com.beeftaquitos.psychedelicraft.screen.*;
 import com.beeftaquitos.psychedelicraft.sound.ModSounds;
 import com.beeftaquitos.psychedelicraft.util.BetterBrewingRecipe;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.common.extensions.IForgeItem;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -41,6 +49,8 @@ public class Psychedelicraft {
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModBlockEntities.register(eventBus);
+        ModMenuTypes.register(eventBus);
 
         ModPaintings.register(eventBus);
 
@@ -48,6 +58,8 @@ public class Psychedelicraft {
         ModPotions.register(eventBus);
 
         ModSounds.register(eventBus);
+
+        ModRecipes.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
@@ -58,8 +70,6 @@ public class Psychedelicraft {
     }
 
     private void clientSetup(final FMLCommonSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.DRYING_TABLE.get(), RenderType.translucent());
-
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOGUS_FLOWER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_MOGUS_FLOWER.get(), RenderType.cutout());
 
@@ -70,6 +80,10 @@ public class Psychedelicraft {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOGUS_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOGUS_SAPLING.get(), RenderType.cutout());
 
+        MenuScreens.register(ModMenuTypes.DRYING_TABLE_MENU.get(), DryingTableScreen::new);
+        MenuScreens.register(ModMenuTypes.SHROOM_BOX_MENU.get(), ShroomBoxScreen::new);
+        MenuScreens.register(ModMenuTypes.DISTILLERY_MENU.get(), DistilleryScreen::new);
+
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -78,6 +92,15 @@ public class Psychedelicraft {
 
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD,
                     ModItems.GOLD_PLATED_MOGUS.get(), ModPotions.TEST_POTION.get()));
+
+            BrewingRecipeRegistry.addRecipe((new BetterBrewingRecipe(Potions.WATER,
+                    Items.WHEAT, ModPotions.BEER_POTION.get())));
+
+            BrewingRecipeRegistry.addRecipe((new BetterBrewingRecipe(Potions.WATER,
+                    Items.SWEET_BERRIES, ModPotions.WINE_POTION.get())));
+
+            BrewingRecipeRegistry.addRecipe((new BetterBrewingRecipe(Potions.WATER,
+                    Items.SUGAR_CANE, ModPotions.RUM_POTION.get())));
         });
     }
 }

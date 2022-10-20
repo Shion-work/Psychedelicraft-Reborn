@@ -2,10 +2,7 @@ package com.beeftaquitos.psychedelicraft.item;
 
 import com.beeftaquitos.psychedelicraft.Psychedelicraft;
 import com.beeftaquitos.psychedelicraft.block.ModBlocks;
-import com.beeftaquitos.psychedelicraft.item.custom.AsbestosSwordItem;
-import com.beeftaquitos.psychedelicraft.item.custom.CoalCokeItem;
-import com.beeftaquitos.psychedelicraft.item.custom.DowsingRodItem;
-import com.beeftaquitos.psychedelicraft.item.custom.ModArmorItem;
+import com.beeftaquitos.psychedelicraft.item.custom.*;
 import com.beeftaquitos.psychedelicraft.sound.ModSounds;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -132,6 +129,12 @@ public class ModItems {
                     new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1).rarity(Rarity.RARE)));
 
     public static final RegistryObject<Item> BONG = ITEMS.register("bong",
+            () -> new BongItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> EMPTY_BOTTLE = ITEMS.register("empty_bottle",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(64)));
+
+    public static final RegistryObject<Item> BOTTLE_OF_BEER = ITEMS.register("bottle_of_beer",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1)));
 
 

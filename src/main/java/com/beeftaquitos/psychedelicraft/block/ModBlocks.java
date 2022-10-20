@@ -1,10 +1,7 @@
 package com.beeftaquitos.psychedelicraft.block;
 
 import com.beeftaquitos.psychedelicraft.Psychedelicraft;
-import com.beeftaquitos.psychedelicraft.block.custom.CannabisPlantBlock;
-import com.beeftaquitos.psychedelicraft.block.custom.DryingTableBlock;
-import com.beeftaquitos.psychedelicraft.block.custom.ModFlammableRotatedPillarBlock;
-import com.beeftaquitos.psychedelicraft.block.custom.SpeedyBlock;
+import com.beeftaquitos.psychedelicraft.block.custom.*;
 import com.beeftaquitos.psychedelicraft.item.ModCreativeModeTab;
 import com.beeftaquitos.psychedelicraft.item.ModItems;
 import com.beeftaquitos.psychedelicraft.sound.ModSounds;
@@ -47,6 +44,14 @@ public class ModBlocks {
     public static final RegistryObject<Block> DRYING_TABLE = registerBlock("drying_table",
             () -> new DryingTableBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()),
                     ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+
+    public static final RegistryObject<Block> SHROOM_BOX = registerBlock("shroom_box",
+            () -> new ShroomBoxBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()),
+            ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+
+    public static final RegistryObject<Block> DISTILLERY = registerBlock("distillery",
+            () -> new DistilleryBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()),
+            ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
 
     public static final RegistryObject<Block> SPEEDY_BLOCK = registerBlock("speedy_block",
             () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.STONE)

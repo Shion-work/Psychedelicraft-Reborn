@@ -1,0 +1,11 @@
+{
+  "type": "psychedelicraft:juicing",
+  "ingredients": [
+    {
+      "item": "psychedelicraft:brown_shroom"
+    }
+  ],
+  "output": {
+    "item": "psychedelicraft:succulent_shroom"
+  }
+}

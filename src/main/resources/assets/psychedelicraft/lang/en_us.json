@@ -47,9 +47,11 @@
   "block.psychedelicraft.blunt_bundle": "Blunt Bundle",
   "block.psychedelicraft.chrysotile": "Chrysotile",
 
-
+  "block.psychedelicraft.shroom_box": "Shroom Box",
   "block.psychedelicraft.drying_table": "Drying Table",
   "block.psychedelicraft.speedy_block": "Speedy Block",
+  "block.psychedelicraft.distillery": "Distillery",
+
 
   "block.psychedelicraft.mogus_glass": "Mogus Glass",
   "block.psychedelicraft.mogus_planks": "Mogus Planks",
@@ -68,6 +70,17 @@
   "block.psychedelicraft.potted_mogus_flower": "Potted Mogus Flower",
 
 
+  "item.minecraft.potion.effect.beer_potion": "Fermented Wheat",
+  "item.minecraft.splash_potion.effect.beer_potion": "Splash Potion of Freeze",
+  "item.minecraft.lingering_potion.effect.beer_potion": "Lingering Potion of Freeze",
+
+  "item.minecraft.potion.effect.wine_potion": "Fermented Sweet Berries",
+  "item.minecraft.splash_potion.effect.wine_potion": "Splash Potion of Freeze",
+  "item.minecraft.lingering_potion.effect.beer_potion": "Lingering Potion of Freeze",
+
+  "item.minecraft.potion.effect.rum_potion": "Fermented Sugar Cane",
+  "item.minecraft.splash_potion.effect.beer_potion": "Splash Potion of Freeze",
+  "item.minecraft.lingering_potion.effect.beer_potion": "Lingering Potion of Freeze",
 
   "effect.psychedelicraft.freeze": "freeze",
   "item.minecraft.potion.effect.freeze_potion": "Freeze Potion",
