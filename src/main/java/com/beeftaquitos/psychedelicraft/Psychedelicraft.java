@@ -15,8 +15,14 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.PotionItem;
+import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
@@ -90,17 +96,17 @@ public class Psychedelicraft {
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.MOGUS_FLOWER.getId(), ModBlocks.POTTED_MOGUS_FLOWER);
 
-            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD,
-                    ModItems.GOLD_PLATED_MOGUS.get(), ModPotions.TEST_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.POTION), Ingredient.of(Items.WHEAT), new ItemStack(ModItems.FERMENTED_WHEAT.get()));
+            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.SPLASH_POTION), Ingredient.of(Items.WHEAT), new ItemStack(ModItems.FERMENTED_WHEAT.get()));
+            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.LINGERING_POTION), Ingredient.of(Items.WHEAT), new ItemStack(ModItems.FERMENTED_WHEAT.get()));
 
-            BrewingRecipeRegistry.addRecipe((new BetterBrewingRecipe(Potions.WATER,
-                    Items.WHEAT, ModPotions.BEER_POTION.get())));
+            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.POTION), Ingredient.of(Items.SWEET_BERRIES), new ItemStack(ModItems.FERMENTED_SWEET_BERRIES.get()));
+            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.SPLASH_POTION), Ingredient.of(Items.SWEET_BERRIES), new ItemStack(ModItems.FERMENTED_SWEET_BERRIES.get()));
+            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.LINGERING_POTION), Ingredient.of(Items.SWEET_BERRIES), new ItemStack(ModItems.FERMENTED_SWEET_BERRIES.get()));
 
-            BrewingRecipeRegistry.addRecipe((new BetterBrewingRecipe(Potions.WATER,
-                    Items.SWEET_BERRIES, ModPotions.WINE_POTION.get())));
-
-            BrewingRecipeRegistry.addRecipe((new BetterBrewingRecipe(Potions.WATER,
-                    Items.SUGAR_CANE, ModPotions.RUM_POTION.get())));
+            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.POTION), Ingredient.of(Items.SUGAR_CANE), new ItemStack(ModItems.FERMENTED_SUGAR_CANE.get()));
+            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.SPLASH_POTION), Ingredient.of(Items.SUGAR_CANE), new ItemStack(ModItems.FERMENTED_SUGAR_CANE.get()));
+            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.LINGERING_POTION), Ingredient.of(Items.SUGAR_CANE), new ItemStack(ModItems.FERMENTED_SUGAR_CANE.get()));
         });
     }
 }

@@ -17,6 +17,13 @@
   "item.psychedelicraft.gold_plated_mogus": "Gold Plated Mogus",
   "item.psychedelicraft.luscious_shroom": "Luscious Shroom",
   "item.psychedelicraft.succulent_shroom": "Succulent Shroom",
+  "item.psychedelicraft.bottle_of_beer": "Bottle of Beer",
+  "item.psychedelicraft.bottle_of_wine": "Bottle of Wine",
+  "item.psychedelicraft.bottle_of_rum": "Bottle of Rum",
+  "item.psychedelicraft.empty_bottle": "Empty Bottle",
+  "item.psychedelicraft.fermented_wheat": "Fermented Wheat",
+  "item.psychedelicraft.fermented_sweet_berries": "Fermented Sweet Berries",
+  "item.psychedelicraft.fermented_sugar_cane": "Fermented Sugar Cane",
 
   "item.psychedelicraft.mogus_trap_music_disc": "Music Disc",
   "item.psychedelicraft.mogus_trap_music_disc.desc": "Among?",
@@ -68,19 +75,6 @@
 
   "block.psychedelicraft.mogus_flower": "Mogus Flower",
   "block.psychedelicraft.potted_mogus_flower": "Potted Mogus Flower",
-
-
-  "item.minecraft.potion.effect.beer_potion": "Fermented Wheat",
-  "item.minecraft.splash_potion.effect.beer_potion": "Splash Potion of Freeze",
-  "item.minecraft.lingering_potion.effect.beer_potion": "Lingering Potion of Freeze",
-
-  "item.minecraft.potion.effect.wine_potion": "Fermented Sweet Berries",
-  "item.minecraft.splash_potion.effect.wine_potion": "Splash Potion of Freeze",
-  "item.minecraft.lingering_potion.effect.beer_potion": "Lingering Potion of Freeze",
-
-  "item.minecraft.potion.effect.rum_potion": "Fermented Sugar Cane",
-  "item.minecraft.splash_potion.effect.beer_potion": "Splash Potion of Freeze",
-  "item.minecraft.lingering_potion.effect.beer_potion": "Lingering Potion of Freeze",
 
   "effect.psychedelicraft.freeze": "freeze",
   "item.minecraft.potion.effect.freeze_potion": "Freeze Potion",

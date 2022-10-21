@@ -1,0 +1,11 @@
+{
+  "type": "psychedelicraft:drying",
+  "ingredients": [
+    {
+      "item": "psychedelicraft:cannabis_bud"
+    }
+  ],
+  "output": {
+    "item": "psychedelicraft:dried_cannabis_bud"
+  }
+}

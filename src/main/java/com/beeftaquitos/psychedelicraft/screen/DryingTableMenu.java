@@ -1,6 +1,7 @@
 package com.beeftaquitos.psychedelicraft.screen;
 import com.beeftaquitos.psychedelicraft.block.ModBlocks;
 import com.beeftaquitos.psychedelicraft.block.entity.DryingTableBlockEntity;
+import com.beeftaquitos.psychedelicraft.screen.slot.ModDrugPlantSlot;
 import com.beeftaquitos.psychedelicraft.screen.slot.ModResultSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -32,7 +33,7 @@ public class DryingTableMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 80, 18));
+            this.addSlot(new ModDrugPlantSlot(handler, 0, 80, 18));
             this.addSlot(new ModResultSlot(handler, 1, 80, 60));
         });
 

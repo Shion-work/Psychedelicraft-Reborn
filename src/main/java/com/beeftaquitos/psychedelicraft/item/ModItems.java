@@ -132,10 +132,27 @@ public class ModItems {
             () -> new BongItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1)));
 
     public static final RegistryObject<Item> EMPTY_BOTTLE = ITEMS.register("empty_bottle",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(64)));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+    public static final RegistryObject<Item> FERMENTED_WHEAT = ITEMS.register("fermented_wheat",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> FERMENTED_SWEET_BERRIES = ITEMS.register("fermented_sweet_berries",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> FERMENTED_SUGAR_CANE = ITEMS.register("fermented_sugar_cane",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1)));
 
     public static final RegistryObject<Item> BOTTLE_OF_BEER = ITEMS.register("bottle_of_beer",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1)));
+            () -> new BowlFoodItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+    public static final RegistryObject<Item> BOTTLE_OF_WINE = ITEMS.register("bottle_of_wine",
+            () -> new BowlFoodItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+    public static final RegistryObject<Item> BOTTLE_OF_RUM = ITEMS.register("bottle_of_rum",
+            () -> new BowlFoodItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+
 
 
     public static void register(IEventBus eventBus) {

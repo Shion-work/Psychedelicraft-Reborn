@@ -2,6 +2,7 @@ package com.beeftaquitos.psychedelicraft.block.entity;
 
 import com.beeftaquitos.psychedelicraft.block.ModBlockEntities;
 import com.beeftaquitos.psychedelicraft.item.ModItems;
+import com.beeftaquitos.psychedelicraft.potion.ModPotions;
 import com.beeftaquitos.psychedelicraft.recipe.DistilleryRecipe;
 import com.beeftaquitos.psychedelicraft.screen.DistilleryMenu;
 import net.minecraft.core.BlockPos;
@@ -35,7 +36,7 @@ import javax.annotation.Nonnull;
 import java.util.Optional;
 
 public class DistilleryBlockEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
+    private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -153,11 +154,21 @@ public class DistilleryBlockEntity extends BlockEntity implements MenuProvider {
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem())
-                && hasSugarinSugarSlot(entity);
+                && hasSugarinSugarSlot(entity) && hasBottleinBottleSlot(entity);
     }
 
+    /*
+    private static boolean hasAlcoholInAlcoholSlot(ShroomBoxBlockEntity entity) {
+        return PotionUtils.getPotion(entity.itemHandler.getStackInSlot(0)) == ModPotions.BEER_POTION.get();
+    }
+    */
+
     private static boolean hasSugarinSugarSlot(DistilleryBlockEntity entity) {
-        return entity.itemHandler.getStackInSlot(2).getItem() == Items.SUGAR;
+        return entity.itemHandler.getStackInSlot(1).getItem() == Items.SUGAR;
+    }
+
+    private static boolean hasBottleinBottleSlot(DistilleryBlockEntity entity) {
+        return entity.itemHandler.getStackInSlot(2).getItem() == ModItems.EMPTY_BOTTLE.get();
     }
 
     private static void craftItem(DistilleryBlockEntity entity) {
@@ -173,9 +184,10 @@ public class DistilleryBlockEntity extends BlockEntity implements MenuProvider {
         if(match.isPresent()) {
             entity.itemHandler.extractItem(0,1, false);
             entity.itemHandler.extractItem(1,1, false);
+            entity.itemHandler.extractItem(2,1, false);
 
-            entity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getResultItem().getItem(),
-                    entity.itemHandler.getStackInSlot(2).getCount() + 1));
+            entity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getResultItem().getItem(),
+                    entity.itemHandler.getStackInSlot(3).getCount() + 1));
 
             entity.resetProgress();
         }
@@ -186,10 +198,10 @@ public class DistilleryBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-        return inventory.getItem(2).getItem() == output.getItem() || inventory.getItem(2).isEmpty();
+        return inventory.getItem(3).getItem() == output.getItem() || inventory.getItem(3).isEmpty();
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
-        return inventory.getItem(2).getMaxStackSize() > inventory.getItem(2).getCount();
+        return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount();
     }
 }

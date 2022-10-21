@@ -1,0 +1,11 @@
+{
+  "type": "psychedelicraft:drying",
+  "ingredients": [
+    {
+      "item": "psychedelicraft:tobacco_leaf"
+    }
+  ],
+  "output": {
+    "item": "psychedelicraft:dried_tobacco_leaf"
+  }
+}

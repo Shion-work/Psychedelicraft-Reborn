@@ -2,7 +2,10 @@ package com.beeftaquitos.psychedelicraft.screen;
 import com.beeftaquitos.psychedelicraft.block.ModBlocks;
 import com.beeftaquitos.psychedelicraft.block.entity.ShroomBoxBlockEntity;
 import com.beeftaquitos.psychedelicraft.screen.ModMenuTypes;
+import com.beeftaquitos.psychedelicraft.screen.slot.ModAlcoholSlot;
+import com.beeftaquitos.psychedelicraft.screen.slot.ModMogusSlot;
 import com.beeftaquitos.psychedelicraft.screen.slot.ModResultSlot;
+import com.beeftaquitos.psychedelicraft.screen.slot.ModShroomSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -33,9 +36,9 @@ public class ShroomBoxMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 34, 40));
-            this.addSlot(new SlotItemHandler(handler, 1, 57, 18));
-            this.addSlot(new SlotItemHandler(handler, 2, 103, 18));
+            this.addSlot(new ModAlcoholSlot(handler, 0, 34, 40));
+            this.addSlot(new ModShroomSlot(handler, 1, 57, 18));
+            this.addSlot(new ModMogusSlot(handler, 2, 103, 18));
             this.addSlot(new ModResultSlot(handler, 3, 80, 60));
         });
 

@@ -2,10 +2,10 @@
   "type": "psychedelicraft:distilling",
   "ingredients": [
     {
-      "item": "psychedelicraft:gold_plated_mogus"
+      "item": "psychedelicraft:rum_potion"
     }
   ],
   "output": {
-    "item": "psychedelicraft:bottle_of_beer"
+    "item": "psychedelicraft:bottle_of_rum"
   }
 }

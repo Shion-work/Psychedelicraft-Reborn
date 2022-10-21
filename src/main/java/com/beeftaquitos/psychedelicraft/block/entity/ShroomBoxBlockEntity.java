@@ -34,7 +34,7 @@ import java.util.Optional;
 import java.util.Random;
 
 public class ShroomBoxBlockEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
+    final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -156,7 +156,11 @@ public class ShroomBoxBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private static boolean hasAlcoholInAlcoholSlot(ShroomBoxBlockEntity entity) {
-        return PotionUtils.getPotion(entity.itemHandler.getStackInSlot(0)) == Potions.WATER;
+        if(entity.itemHandler.getStackInSlot(0).getItem() == ModItems.BOTTLE_OF_WINE.get() ||
+                entity.itemHandler.getStackInSlot(0).getItem() == ModItems.BOTTLE_OF_RUM.get() ||
+                entity.itemHandler.getStackInSlot(0).getItem() == ModItems.BOTTLE_OF_BEER.get())
+            return true;
+        return false;
     }
 
     private static boolean hasMogusInMogusSlot(ShroomBoxBlockEntity entity) {

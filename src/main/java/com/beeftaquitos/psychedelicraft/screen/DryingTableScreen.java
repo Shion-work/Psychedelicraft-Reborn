@@ -27,7 +27,7 @@ public class DryingTableScreen extends AbstractContainerScreen<DryingTableMenu> 
         this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
 
         if(menu.isCrafting()) {
-            blit(pPoseStack, x + 102, y + 41, 176, 0, 8, menu.getScaledProgress());
+            blit(pPoseStack, x + 102, y + 40, 176, 0, 8, menu.getScaledProgress());
         }
     }
 
