@@ -2,7 +2,7 @@
   "type": "psychedelicraft:distilling",
   "ingredients": [
     {
-      "item": "psychedelicraft:wine_potion"
+      "item": "psychedelicraft:fermented_sweet_berries"
     }
   ],
   "output": {

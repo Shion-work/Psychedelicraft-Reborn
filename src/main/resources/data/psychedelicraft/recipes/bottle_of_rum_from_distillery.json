@@ -2,7 +2,7 @@
   "type": "psychedelicraft:distilling",
   "ingredients": [
     {
-      "item": "psychedelicraft:rum_potion"
+      "item": "psychedelicraft:fermented_sugar_cane"
     }
   ],
   "output": {

@@ -2,7 +2,7 @@
   "type": "psychedelicraft:distilling",
   "ingredients": [
     {
-      "item": "psychedelicraft:beer_potion"
+      "item": "psychedelicraft:fermented_wheat"
     }
   ],
   "output": {
