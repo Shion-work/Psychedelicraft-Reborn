@@ -116,6 +116,10 @@ public class ModItems {
             () -> new ItemNameBlockItem(ModBlocks.CANNABIS_PLANT.get(),
                     new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
 
+    public static final RegistryObject<Item> TOBACCO_SEEDS = ITEMS.register("tobacco_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.TOBACCO_PLANT.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
     public static final RegistryObject<Item> MOGUS_TRAP_MUSIC_DISC = ITEMS.register("mogus_trap_music_disc",
             () -> new RecordItem(4, ModSounds.MOGUS_TRAP,
                     new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1).rarity(Rarity.RARE)));
@@ -144,13 +148,13 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1)));
 
     public static final RegistryObject<Item> BOTTLE_OF_BEER = ITEMS.register("bottle_of_beer",
-            () -> new BowlFoodItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+            () -> new AlcoholItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
 
     public static final RegistryObject<Item> BOTTLE_OF_WINE = ITEMS.register("bottle_of_wine",
-            () -> new BowlFoodItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+            () -> new AlcoholItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
 
     public static final RegistryObject<Item> BOTTLE_OF_RUM = ITEMS.register("bottle_of_rum",
-            () -> new BowlFoodItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+            () -> new AlcoholItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
 
 
 

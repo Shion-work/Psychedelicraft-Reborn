@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "SSS",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "tag": "minecraft:wooden_slabs"
+    },
+    "X": {
+      "tag": "psychedelicraft:drying_materials"
+    }
+  },
+  "result": {
+    "item": "psychedelicraft:drying_table"
+  }
+}

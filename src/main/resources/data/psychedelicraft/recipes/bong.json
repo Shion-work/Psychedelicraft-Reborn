@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " XX",
+    "#XX",
+    "XXX"
+  ],
+  "key": {
+    "#": {
+      "tag": "psychedelicraft:drying_materials"
+    },
+    "X": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "psychedelicraft:bong"
+  }
+}

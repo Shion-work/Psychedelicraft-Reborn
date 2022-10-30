@@ -1,6 +1,8 @@
 package com.beeftaquitos.psychedelicraft.screen.slot;
 import com.beeftaquitos.psychedelicraft.item.ModItems;
+import com.beeftaquitos.psychedelicraft.util.ModTags;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
@@ -11,7 +13,7 @@ public class ModAlcoholSlot extends SlotItemHandler {
 
     @Override
     public boolean mayPlace(ItemStack stack) {
-        if(stack.is(ModItems.BOTTLE_OF_RUM.get()) || stack.is(ModItems.BOTTLE_OF_WINE.get()) || stack.is(ModItems.BOTTLE_OF_BEER.get()))
+        if(stack.is(ModTags.Items.BOTTLES_OF_ALCOHOL))
             return true;
         return false;
     }

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BXB",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:iron_block"
+    },
+    "X": {
+      "tag": "psychedelicraft:bottles_of_alcohol"
+    }
+  },
+  "result": {
+    "item": "psychedelicraft:distillery"
+  }
+}

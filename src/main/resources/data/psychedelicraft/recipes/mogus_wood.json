@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bark",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "psychedelicraft:mogus_log"
+    }
+  },
+  "result": {
+    "item": "psychedelicraft:mogus_wood",
+    "count": 3
+  }
+}

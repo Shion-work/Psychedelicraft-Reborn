@@ -28,6 +28,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.common.extensions.IForgeItem;
 import net.minecraftforge.event.RegistryEvent;
@@ -40,6 +41,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 import java.util.stream.Collectors;
@@ -82,6 +84,8 @@ public class Psychedelicraft {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOGUS_GLASS.get(), RenderType.translucent());
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CANNABIS_PLANT.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TOBACCO_PLANT.get(), RenderType.cutout());
+
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOGUS_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOGUS_SAPLING.get(), RenderType.cutout());
@@ -89,24 +93,15 @@ public class Psychedelicraft {
         MenuScreens.register(ModMenuTypes.DRYING_TABLE_MENU.get(), DryingTableScreen::new);
         MenuScreens.register(ModMenuTypes.SHROOM_BOX_MENU.get(), ShroomBoxScreen::new);
         MenuScreens.register(ModMenuTypes.DISTILLERY_MENU.get(), DistilleryScreen::new);
-
     }
 
     private void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.MOGUS_FLOWER.getId(), ModBlocks.POTTED_MOGUS_FLOWER);
-
-            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.POTION), Ingredient.of(Items.WHEAT), new ItemStack(ModItems.FERMENTED_WHEAT.get()));
-            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.SPLASH_POTION), Ingredient.of(Items.WHEAT), new ItemStack(ModItems.FERMENTED_WHEAT.get()));
-            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.LINGERING_POTION), Ingredient.of(Items.WHEAT), new ItemStack(ModItems.FERMENTED_WHEAT.get()));
-
-            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.POTION), Ingredient.of(Items.SWEET_BERRIES), new ItemStack(ModItems.FERMENTED_SWEET_BERRIES.get()));
-            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.SPLASH_POTION), Ingredient.of(Items.SWEET_BERRIES), new ItemStack(ModItems.FERMENTED_SWEET_BERRIES.get()));
-            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.LINGERING_POTION), Ingredient.of(Items.SWEET_BERRIES), new ItemStack(ModItems.FERMENTED_SWEET_BERRIES.get()));
-
-            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.POTION), Ingredient.of(Items.SUGAR_CANE), new ItemStack(ModItems.FERMENTED_SUGAR_CANE.get()));
-            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.SPLASH_POTION), Ingredient.of(Items.SUGAR_CANE), new ItemStack(ModItems.FERMENTED_SUGAR_CANE.get()));
-            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.LINGERING_POTION), Ingredient.of(Items.SUGAR_CANE), new ItemStack(ModItems.FERMENTED_SUGAR_CANE.get()));
         });
+
+        BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Items.WHEAT), new ItemStack(ModItems.FERMENTED_WHEAT.get()));
+        BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Items.SWEET_BERRIES), new ItemStack(ModItems.FERMENTED_SWEET_BERRIES.get()));
+        BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Items.SUGAR_CANE), new ItemStack(ModItems.FERMENTED_SUGAR_CANE.get()));
     }
 }

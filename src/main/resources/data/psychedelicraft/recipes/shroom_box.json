@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "XXX",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "X": {
+      "tag": "psychedelicraft:magic_shrooms"
+    }
+  },
+  "result": {
+    "item": "psychedelicraft:shroom_box"
+  }
+}

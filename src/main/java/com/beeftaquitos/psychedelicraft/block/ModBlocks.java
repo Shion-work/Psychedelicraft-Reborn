@@ -84,6 +84,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> CANNABIS_PLANT = registerBlockWithoutBlockItem("cannabis_plant",
             () -> new CannabisPlantBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()));
 
+    public static final RegistryObject<Block> TOBACCO_PLANT = registerBlockWithoutBlockItem("tobacco_plant",
+            () -> new TobaccoPlantBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()));
+
     public static final RegistryObject<Block> MOGUS_LOG = registerBlock("mogus_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(ModSounds.MOGUS_SOUNDS)),
             ModCreativeModeTab.PSYCHEDELICRAFT_TAB);

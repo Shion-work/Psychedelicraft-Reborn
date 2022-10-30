@@ -8,5 +8,4 @@ public class ModFoods {
     public static final FoodProperties EDIBLE = (new FoodProperties.Builder()).nutrition(2).saturationMod(.02f).effect(new MobEffectInstance(MobEffects.HUNGER, 1200, 0), 1).alwaysEat().build();
     public static final FoodProperties RED_SHROOM = (new FoodProperties.Builder()).nutrition(2).saturationMod(.02f).effect(new MobEffectInstance(MobEffects.HUNGER, 1200, 0), 1).alwaysEat().build();
     public static final FoodProperties BROWN_SHROOM = (new FoodProperties.Builder()).nutrition(2).saturationMod(.02f).effect(new MobEffectInstance(MobEffects.HUNGER, 1200, 0), 1).alwaysEat().build();
-
 }

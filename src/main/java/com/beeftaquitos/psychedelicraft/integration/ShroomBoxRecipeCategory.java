@@ -3,6 +3,7 @@ import com.beeftaquitos.psychedelicraft.Psychedelicraft;
 import com.beeftaquitos.psychedelicraft.block.ModBlocks;
 import com.beeftaquitos.psychedelicraft.item.ModItems;
 import com.beeftaquitos.psychedelicraft.recipe.ShroomBoxRecipe;
+import com.beeftaquitos.psychedelicraft.util.ModTags;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
@@ -59,7 +60,7 @@ public class ShroomBoxRecipeCategory implements IRecipeCategory<ShroomBoxRecipe>
 
     @Override
     public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull ShroomBoxRecipe recipe, @Nonnull IFocusGroup focusGroup) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 1, 28).addIngredients(Ingredient.of(ModItems.BOTTLE_OF_WINE.get()));
+        builder.addSlot(RecipeIngredientRole.INPUT, 1, 28).addIngredients(Ingredient.of(ModTags.Items.BOTTLES_OF_ALCOHOL));
         builder.addSlot(RecipeIngredientRole.INPUT, 24, 6).addIngredients(recipe.getIngredients().get(0));
         builder.addSlot(RecipeIngredientRole.INPUT, 70, 6).addIngredients(Ingredient.of(ModItems.GOLD_PLATED_MOGUS.get()));
         builder.addSlot(RecipeIngredientRole.OUTPUT, 47, 48).addItemStack(recipe.getResultItem());

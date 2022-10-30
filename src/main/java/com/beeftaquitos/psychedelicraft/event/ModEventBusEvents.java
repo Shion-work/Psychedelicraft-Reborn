@@ -24,14 +24,22 @@ public class ModEventBusEvents {
         event.getRegistry().registerAll(
                 new CannabisSeedsFromGrassAdditionModifier.Serializer().setRegistryName
                         (new ResourceLocation(Psychedelicraft.MOD_ID,"cannabis_seeds_from_grass")),
+
+                new TobaccoSeedsFromGrassAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Psychedelicraft.MOD_ID,"tobacco_seeds_from_grass")),
+
                 new BluntFromVillagersAdditionModifer.Serializer().setRegistryName
                         (new ResourceLocation(Psychedelicraft.MOD_ID,"blunt_from_villager")),
+
                 new JointFromVillagersAdditionModifer.Serializer().setRegistryName
                         (new ResourceLocation(Psychedelicraft.MOD_ID,"joint_from_villager")),
+
                 new MogusTrapMusicDiscInIglooAdditionModifier.Serializer().setRegistryName
                         (new ResourceLocation(Psychedelicraft.MOD_ID,"mogus_trap_music_disc_in_igloo")),
+
                 new SbobMusicDiscInShipwreckTreasureAdditionModifier.Serializer().setRegistryName
                         (new ResourceLocation(Psychedelicraft.MOD_ID,"sbob_music_disc_in_shipwreck_treasure")),
+
                 new EnjoyMinecraftMusicDiscInEndCityTreasureAdditionModifier.Serializer().setRegistryName
                         (new ResourceLocation(Psychedelicraft.MOD_ID,"enjoy_minecraft_music_disc_in_end_city_treasure"))
         );
@@ -42,6 +50,5 @@ public class ModEventBusEvents {
         Registry.register(Registry.RECIPE_TYPE, DryingTableRecipe.Type.ID, DryingTableRecipe.Type.INSTANCE);
         Registry.register(Registry.RECIPE_TYPE, ShroomBoxRecipe.Type.ID, ShroomBoxRecipe.Type.INSTANCE);
         Registry.register(Registry.RECIPE_TYPE, DistilleryRecipe.Type.ID, DistilleryRecipe.Type.INSTANCE);
-
     }
 }

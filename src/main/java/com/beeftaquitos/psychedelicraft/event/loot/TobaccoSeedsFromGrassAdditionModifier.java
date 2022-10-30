@@ -13,10 +13,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-public class CannabisSeedsFromGrassAdditionModifier extends LootModifier {
+public class TobaccoSeedsFromGrassAdditionModifier extends LootModifier {
     private final Item addition;
 
-    protected CannabisSeedsFromGrassAdditionModifier(LootItemCondition[] conditionsIn, Item addition) {
+    protected TobaccoSeedsFromGrassAdditionModifier(LootItemCondition[] conditionsIn, Item addition) {
         super(conditionsIn);
         this.addition = addition;
     }
@@ -31,18 +31,18 @@ public class CannabisSeedsFromGrassAdditionModifier extends LootModifier {
         return generatedLoot;
     }
 
-    public static class Serializer extends GlobalLootModifierSerializer<CannabisSeedsFromGrassAdditionModifier> {
+    public static class Serializer extends GlobalLootModifierSerializer<TobaccoSeedsFromGrassAdditionModifier> {
 
         @Override
-        public CannabisSeedsFromGrassAdditionModifier read(ResourceLocation name, JsonObject object,
-                                                           LootItemCondition[] conditionsIn) {
+        public TobaccoSeedsFromGrassAdditionModifier read(ResourceLocation name, JsonObject object,
+                                                          LootItemCondition[] conditionsIn) {
             Item addition = ForgeRegistries.ITEMS.getValue(
                     new ResourceLocation(GsonHelper.getAsString(object, "addition")));
-            return new CannabisSeedsFromGrassAdditionModifier(conditionsIn, addition);
+            return new TobaccoSeedsFromGrassAdditionModifier(conditionsIn, addition);
         }
 
         @Override
-        public JsonObject write(CannabisSeedsFromGrassAdditionModifier instance) {
+        public JsonObject write(TobaccoSeedsFromGrassAdditionModifier instance) {
             JsonObject json = makeConditions(instance.conditions);
             json.addProperty("addition", ForgeRegistries.ITEMS.getKey(instance.addition).toString());
             return json;
