@@ -2,6 +2,7 @@ package com.beeftaquitos.psychedelicraft.item;
 
 import com.beeftaquitos.psychedelicraft.Psychedelicraft;
 import com.beeftaquitos.psychedelicraft.block.ModBlocks;
+import com.beeftaquitos.psychedelicraft.fluid.ModFluids;
 import com.beeftaquitos.psychedelicraft.item.custom.*;
 import com.beeftaquitos.psychedelicraft.sound.ModSounds;
 import net.minecraft.world.effect.MobEffects;
@@ -32,10 +33,10 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).food(ModFoods.BROWN_SHROOM)));
 
     public static final RegistryObject<Item> BLUNT = ITEMS.register("blunt",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+            () -> new SmokingItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
 
     public static final RegistryObject<Item> JOINT = ITEMS.register("joint",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+            () -> new SmokingItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
 
     public static final RegistryObject<Item> CANNABIS_BUDS = ITEMS.register("cannabis_bud",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
@@ -148,13 +149,16 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1)));
 
     public static final RegistryObject<Item> BOTTLE_OF_BEER = ITEMS.register("bottle_of_beer",
-            () -> new AlcoholItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+            () -> new AlcoholItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).food(ModFoods.BOTTLE_OF_BEER).stacksTo(1)));
 
     public static final RegistryObject<Item> BOTTLE_OF_WINE = ITEMS.register("bottle_of_wine",
-            () -> new AlcoholItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+            () -> new AlcoholItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).food(ModFoods.BOTTLE_OF_WINE).stacksTo(1)));
 
     public static final RegistryObject<Item> BOTTLE_OF_RUM = ITEMS.register("bottle_of_rum",
-            () -> new AlcoholItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+            () -> new AlcoholItem(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).food(ModFoods.BOTTLE_OF_RUM).stacksTo(1)));
+
+    public static final RegistryObject<Item> SUS_JUICE_BUCKET = ITEMS.register("sus_juice_bucket",
+            () -> new BucketItem(ModFluids.SUS_JUICE_FLUID, new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1)));
 
 
 

@@ -3,48 +3,30 @@ package com.beeftaquitos.psychedelicraft;
 import com.beeftaquitos.psychedelicraft.block.ModBlockEntities;
 import com.beeftaquitos.psychedelicraft.block.ModBlocks;
 import com.beeftaquitos.psychedelicraft.effect.ModEffects;
+import com.beeftaquitos.psychedelicraft.fluid.ModFluids;
 import com.beeftaquitos.psychedelicraft.item.ModItems;
 import com.beeftaquitos.psychedelicraft.painting.ModPaintings;
+import com.beeftaquitos.psychedelicraft.particle.ModParticles;
 import com.beeftaquitos.psychedelicraft.potion.ModPotions;
 import com.beeftaquitos.psychedelicraft.recipe.ModRecipes;
 import com.beeftaquitos.psychedelicraft.screen.*;
 import com.beeftaquitos.psychedelicraft.sound.ModSounds;
-import com.beeftaquitos.psychedelicraft.util.BetterBrewingRecipe;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.PotionItem;
-import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.PotionUtils;
-import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
-import net.minecraftforge.common.extensions.IForgeItem;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
-
-import java.util.stream.Collectors;
 
 @Mod(Psychedelicraft.MOD_ID)
 public class Psychedelicraft {
@@ -69,6 +51,10 @@ public class Psychedelicraft {
 
         ModRecipes.register(eventBus);
 
+        ModParticles.register(eventBus);
+
+        ModFluids.register(eventBus);
+
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
 
@@ -89,6 +75,10 @@ public class Psychedelicraft {
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOGUS_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOGUS_SAPLING.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(ModFluids.SUS_JUICE_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModFluids.SUS_JUICE_FLUID.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModFluids.SUS_JUICE_FLOWING.get(), RenderType.translucent());
 
         MenuScreens.register(ModMenuTypes.DRYING_TABLE_MENU.get(), DryingTableScreen::new);
         MenuScreens.register(ModMenuTypes.SHROOM_BOX_MENU.get(), ShroomBoxScreen::new);

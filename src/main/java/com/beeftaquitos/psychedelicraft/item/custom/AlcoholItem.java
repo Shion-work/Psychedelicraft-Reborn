@@ -6,10 +6,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.BowlFoodItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 
@@ -18,13 +15,12 @@ public class AlcoholItem extends BowlFoodItem {
         super(pProperties);
     }
 
-    @Override
-    public boolean isEdible() {
-        return true;
-    }
-
     public SoundEvent getDrinkingSound() {
         return SoundEvents.GENERIC_DRINK;
+    }
+
+    public UseAnim getUseAnimation(ItemStack pStack) {
+        return pStack.getItem().isEdible() ? UseAnim.DRINK : UseAnim.NONE;
     }
 
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving) {

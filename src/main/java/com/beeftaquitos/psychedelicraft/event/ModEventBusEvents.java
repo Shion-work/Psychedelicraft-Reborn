@@ -2,12 +2,16 @@ package com.beeftaquitos.psychedelicraft.event;
 
 import com.beeftaquitos.psychedelicraft.Psychedelicraft;
 import com.beeftaquitos.psychedelicraft.event.loot.*;
+import com.beeftaquitos.psychedelicraft.particle.ModParticles;
+import com.beeftaquitos.psychedelicraft.particle.custom.SmokingParticles;
 import com.beeftaquitos.psychedelicraft.recipe.DistilleryRecipe;
 import com.beeftaquitos.psychedelicraft.recipe.DryingTableRecipe;
 import com.beeftaquitos.psychedelicraft.recipe.ShroomBoxRecipe;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -50,5 +54,11 @@ public class ModEventBusEvents {
         Registry.register(Registry.RECIPE_TYPE, DryingTableRecipe.Type.ID, DryingTableRecipe.Type.INSTANCE);
         Registry.register(Registry.RECIPE_TYPE, ShroomBoxRecipe.Type.ID, ShroomBoxRecipe.Type.INSTANCE);
         Registry.register(Registry.RECIPE_TYPE, DistilleryRecipe.Type.ID, DistilleryRecipe.Type.INSTANCE);
+    }
+
+    @SubscribeEvent
+    public static void registerParticleFactories(final ParticleFactoryRegisterEvent event) {
+        Minecraft.getInstance().particleEngine.register(ModParticles.SMOKING_PARTICLES.get(),
+                SmokingParticles.Provider::new);
     }
 }
