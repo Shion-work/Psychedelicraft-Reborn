@@ -3,6 +3,7 @@ package com.beeftaquitos.psychedelicraft;
 import com.beeftaquitos.psychedelicraft.block.ModBlockEntities;
 import com.beeftaquitos.psychedelicraft.block.ModBlocks;
 import com.beeftaquitos.psychedelicraft.effect.ModEffects;
+import com.beeftaquitos.psychedelicraft.enchantment.ModEnchantments;
 import com.beeftaquitos.psychedelicraft.fluid.ModFluids;
 import com.beeftaquitos.psychedelicraft.item.ModItems;
 import com.beeftaquitos.psychedelicraft.painting.ModPaintings;
@@ -41,19 +42,14 @@ public class Psychedelicraft {
         ModBlocks.register(eventBus);
         ModBlockEntities.register(eventBus);
         ModMenuTypes.register(eventBus);
-
         ModPaintings.register(eventBus);
-
         ModEffects.register(eventBus);
         ModPotions.register(eventBus);
-
         ModSounds.register(eventBus);
-
         ModRecipes.register(eventBus);
-
         ModParticles.register(eventBus);
-
         ModFluids.register(eventBus);
+        ModEnchantments.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
@@ -71,7 +67,6 @@ public class Psychedelicraft {
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CANNABIS_PLANT.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.TOBACCO_PLANT.get(), RenderType.cutout());
-
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOGUS_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOGUS_SAPLING.get(), RenderType.cutout());

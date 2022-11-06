@@ -1,6 +1,7 @@
 package com.beeftaquitos.psychedelicraft.item.custom;
 
 import com.beeftaquitos.psychedelicraft.item.ModItems;
+import com.beeftaquitos.psychedelicraft.particle.ModParticles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
@@ -24,12 +25,43 @@ public class SmokingItem extends Item {
     public SmokingItem(Properties pProperties) {
         super(pProperties);
     }
+    public UseAnim getUseAnimation(ItemStack pStack) {
+        return UseAnim.BOW;
+    }
 
-    public InteractionResult useOn(UseOnContext pContext) {
-        Player player = pContext.getPlayer();
-        player.sendMessage(new TextComponent("item.psychedelicraft.dowsing_rod.no_valuables") {
-        }, player.getUUID());
+    public SoundEvent getDrinkingSound() {
+        return SoundEvents.CAMPFIRE_CRACKLE;
+    }
 
-        return super.useOn(pContext);
+    @Override
+    public int getUseDuration(ItemStack pStack) {
+        return 64;
+    }
+
+    @Override
+    public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
+        pLivingEntity.getItemInHand(InteractionHand.MAIN_HAND).setCount(pLivingEntity.getItemInHand(InteractionHand.MAIN_HAND).getCount() - 1);
+        return pStack;
+    }
+
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+        ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);
+        if(pPlayer.getOffhandItem().isEmpty()) {
+            pPlayer.startUsingItem(pUsedHand);
+
+            spawnSmokingParticles(pPlayer);
+
+            return InteractionResultHolder.consume(itemstack);
+        } else {
+            return InteractionResultHolder.fail(itemstack);
+        }
+    }
+
+    private void spawnSmokingParticles(Player pPlayer) {
+        for(int i = 0; i < 5; i++) {
+            pPlayer.getLevel().addParticle(ModParticles.SMOKING_PARTICLES.get(),
+                    pPlayer.getX(), pPlayer.getEyeY(), pPlayer.getZ(), 0, 0.1d, 0);
+        }
     }
 }

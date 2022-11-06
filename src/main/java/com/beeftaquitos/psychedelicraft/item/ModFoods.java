@@ -11,6 +11,10 @@ public class ModFoods {
             .effect(new MobEffectInstance(MobEffects.HUNGER, 1200, 0), 1).alwaysEat().build();
     public static final FoodProperties BROWN_SHROOM = (new FoodProperties.Builder()).nutrition(2).saturationMod(.02f)
             .effect(new MobEffectInstance(MobEffects.HUNGER, 1200, 0), 1).alwaysEat().build();
+    public static final FoodProperties SUCCULENT_SHROOM = (new FoodProperties.Builder()).nutrition(2).saturationMod(.02f)
+            .effect(new MobEffectInstance(MobEffects.HUNGER, 1200, 0), 1).alwaysEat().build();
+    public static final FoodProperties LUSCIOUS_SHROOM = (new FoodProperties.Builder()).nutrition(2).saturationMod(.02f)
+            .effect(new MobEffectInstance(MobEffects.HUNGER, 1200, 0), 1).alwaysEat().build();
 
     public static final FoodProperties BOTTLE_OF_BEER = (new FoodProperties.Builder()).nutrition(0).saturationMod(0)
             .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1200, 0), 1).alwaysEat().build();

@@ -108,10 +108,10 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
 
     public static final RegistryObject<Item> LUSCIOUS_SHROOM = ITEMS.register("luscious_shroom",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).food(ModFoods.LUSCIOUS_SHROOM)));
 
     public static final RegistryObject<Item> SUCCULENT_SHROOM = ITEMS.register("succulent_shroom",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).food(ModFoods.SUCCULENT_SHROOM)));
 
     public static final RegistryObject<Item> CANNABIS_SEEDS = ITEMS.register("cannabis_seeds",
             () -> new ItemNameBlockItem(ModBlocks.CANNABIS_PLANT.get(),
