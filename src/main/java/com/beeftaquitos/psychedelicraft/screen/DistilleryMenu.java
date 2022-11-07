@@ -27,7 +27,7 @@ public class DistilleryMenu extends AbstractContainerMenu {
 
     public DistilleryMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(ModMenuTypes.DISTILLERY_MENU.get(), pContainerId);
-        checkContainerSize(inv, 4);
+        checkContainerSize(inv, 3);
         blockEntity = ((DistilleryBlockEntity) entity);
         this.level = inv.player.level;
         this.data = data;
@@ -38,8 +38,7 @@ public class DistilleryMenu extends AbstractContainerMenu {
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
             this.addSlot(new ModPotionSlot(handler, 0, 111, 17));
             this.addSlot(new ModSugarSlot(handler, 1, 80, 17));
-            this.addSlot(new ModEmptyBottleSlot(handler, 2, 80, 38));
-            this.addSlot(new ModResultSlot(handler, 3, 80, 59));
+            this.addSlot(new ModEmptyBottleSlot(handler, 2, 80, 56));
         });
 
         addDataSlots(data);
@@ -73,7 +72,7 @@ public class DistilleryMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 4;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
 
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {

@@ -20,7 +20,7 @@ public class AlcoholItem extends BowlFoodItem {
     }
 
     public UseAnim getUseAnimation(ItemStack pStack) {
-        return pStack.getItem().isEdible() ? UseAnim.DRINK : UseAnim.NONE;
+        return UseAnim.DRINK;
     }
 
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving) {

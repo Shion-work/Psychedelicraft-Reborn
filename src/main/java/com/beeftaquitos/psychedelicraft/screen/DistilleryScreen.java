@@ -27,7 +27,7 @@ public class DistilleryScreen extends AbstractContainerScreen<DistilleryMenu> {
         this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
 
         if(menu.isCrafting()) {
-            blit(pPoseStack, x + 66, y + 33, 176, 0, 11, menu.getScaledProgress());
+            blit(pPoseStack, x + 66, y + 32, 176, 0, 11, menu.getScaledProgress());
         }
     }
 

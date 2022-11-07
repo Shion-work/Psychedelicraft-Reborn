@@ -21,6 +21,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 
 import java.time.Clock;
 
@@ -40,7 +41,7 @@ public class BongItem extends Item {
 
     @Override
     public int getUseDuration(ItemStack pStack) {
-        return 64;
+        return 1000;
     }
 
     @Override
@@ -54,8 +55,7 @@ public class BongItem extends Item {
         ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);
         if(pPlayer.getOffhandItem().is(ModItems.DRIED_CANNABIS_BUDS.get())) {
             pPlayer.startUsingItem(pUsedHand);
-
-            spawnSmokingParticles(pPlayer);
+            onUseTick(pLevel, pPlayer, pPlayer.getItemInHand(pUsedHand), getUseDuration(pPlayer.getItemInHand(pUsedHand)));
 
             return InteractionResultHolder.consume(itemstack);
         } else {
@@ -63,10 +63,18 @@ public class BongItem extends Item {
         }
     }
 
+    @Override
+    public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
+        if(pRemainingUseDuration < 840 && ((getUseDuration(pStack) - pRemainingUseDuration) % 20 == 0))
+            spawnSmokingParticles((Player) pLivingEntity);
+    }
+
     private void spawnSmokingParticles(Player pPlayer) {
-        for(int i = 0; i < 5; i++) {
-            pPlayer.getLevel().addParticle(ModParticles.SMOKING_PARTICLES.get(),
-                    pPlayer.getX(), pPlayer.getEyeY(), pPlayer.getZ(), 0, 0.1d, 0);
-        }
+        Vec3 playerLookVector = pPlayer.getViewVector(0);
+        double spawnX = pPlayer.getX()+playerLookVector.x();
+        double spawnZ = pPlayer.getZ()+playerLookVector.z();
+
+        pPlayer.getLevel().addParticle(ModParticles.SMOKING_PARTICLES.get(),
+                spawnX, pPlayer.getY() + 1.5, spawnZ, 0, 0.1d, 0);
     }
 }

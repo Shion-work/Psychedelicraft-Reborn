@@ -20,6 +20,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.phys.Vec3;
 
 public class SmokingItem extends Item {
     public SmokingItem(Properties pProperties) {
@@ -40,28 +41,30 @@ public class SmokingItem extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-        pLivingEntity.getItemInHand(InteractionHand.MAIN_HAND).setCount(pLivingEntity.getItemInHand(InteractionHand.MAIN_HAND).getCount() - 1);
+        pLivingEntity.getUseItem().setCount(pLivingEntity.getUseItem().getCount() - 1);
         return pStack;
     }
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);
-        if(pPlayer.getOffhandItem().isEmpty()) {
-            pPlayer.startUsingItem(pUsedHand);
+        pPlayer.startUsingItem(pUsedHand);
+        onUseTick(pLevel, pPlayer, pPlayer.getItemInHand(pUsedHand), getUseDuration(pPlayer.getItemInHand(pUsedHand)));
+        return InteractionResultHolder.consume(itemstack);
+    }
 
-            spawnSmokingParticles(pPlayer);
-
-            return InteractionResultHolder.consume(itemstack);
-        } else {
-            return InteractionResultHolder.fail(itemstack);
-        }
+    @Override
+    public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
+        if(pRemainingUseDuration < 54 && ((getUseDuration(pStack) - pRemainingUseDuration) % 10 == 0))
+            spawnSmokingParticles((Player) pLivingEntity);
     }
 
     private void spawnSmokingParticles(Player pPlayer) {
-        for(int i = 0; i < 5; i++) {
-            pPlayer.getLevel().addParticle(ModParticles.SMOKING_PARTICLES.get(),
-                    pPlayer.getX(), pPlayer.getEyeY(), pPlayer.getZ(), 0, 0.1d, 0);
-        }
+        Vec3 playerLookVector = pPlayer.getViewVector(0);
+        double spawnX = pPlayer.getX()+playerLookVector.x();
+        double spawnZ = pPlayer.getZ()+playerLookVector.z();
+
+        pPlayer.getLevel().addParticle(ModParticles.SMOKING_PARTICLES.get(),
+                spawnX, pPlayer.getY() + 1.5, spawnZ, 0, 0.1d, 0);
     }
 }
