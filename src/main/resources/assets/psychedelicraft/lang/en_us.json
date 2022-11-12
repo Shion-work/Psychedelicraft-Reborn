@@ -24,6 +24,8 @@
   "item.psychedelicraft.fermented_wheat": "Fermented Wheat",
   "item.psychedelicraft.fermented_sweet_berries": "Fermented Sweet Berries",
   "item.psychedelicraft.fermented_sugar_cane": "Fermented Sugar Cane",
+  "item.psychedelicraft.ecstasy": "Ecstasy",
+  "item.psychedelicraft.wario_ecstasy": "Wario Ecstasy",
 
   "item.psychedelicraft.mogus_trap_music_disc": "Music Disc",
   "item.psychedelicraft.mogus_trap_music_disc.desc": "Among?",
@@ -31,6 +33,7 @@
   "item.psychedelicraft.sbob_music_disc.desc": "S B O B",
   "item.psychedelicraft.enjoy_minecraft_music_disc": "Music Disc",
   "item.psychedelicraft.enjoy_minecraft_music_disc.desc": "How to Enjoy Minecraft More..",
+  "item.psychedelicraft.ecstasy_fiend_spawn_egg": "Ecstasy Fiend Spawn Egg",
 
   "fluid.psychedelicraft.sus_juice_fluid": "Sus Juice",
   "item.psychedelicraft.sus_juice_bucket": "Sus Juice Bucket",

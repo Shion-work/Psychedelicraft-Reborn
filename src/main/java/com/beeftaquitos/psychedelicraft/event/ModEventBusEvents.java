@@ -1,6 +1,8 @@
 package com.beeftaquitos.psychedelicraft.event;
 
 import com.beeftaquitos.psychedelicraft.Psychedelicraft;
+import com.beeftaquitos.psychedelicraft.entity.ModEntityTypes;
+import com.beeftaquitos.psychedelicraft.entity.custom.EcstasyFiendEntity;
 import com.beeftaquitos.psychedelicraft.event.loot.*;
 import com.beeftaquitos.psychedelicraft.particle.ModParticles;
 import com.beeftaquitos.psychedelicraft.particle.custom.SmokingParticles;
@@ -14,6 +16,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -56,9 +59,16 @@ public class ModEventBusEvents {
         Registry.register(Registry.RECIPE_TYPE, DistilleryRecipe.Type.ID, DistilleryRecipe.Type.INSTANCE);
     }
 
+
     @SubscribeEvent
     public static void registerParticleFactories(final ParticleFactoryRegisterEvent event) {
         Minecraft.getInstance().particleEngine.register(ModParticles.SMOKING_PARTICLES.get(),
                 SmokingParticles.Provider::new);
     }
+
+    @SubscribeEvent
+    public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
+        event.put(ModEntityTypes.ECSTASY_FIEND.get(), EcstasyFiendEntity.setAttributes());
+    }
+
 }

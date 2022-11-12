@@ -4,6 +4,8 @@ import com.beeftaquitos.psychedelicraft.block.ModBlockEntities;
 import com.beeftaquitos.psychedelicraft.block.ModBlocks;
 import com.beeftaquitos.psychedelicraft.effect.ModEffects;
 import com.beeftaquitos.psychedelicraft.enchantment.ModEnchantments;
+import com.beeftaquitos.psychedelicraft.entity.ModEntityTypes;
+import com.beeftaquitos.psychedelicraft.entity.client.EcstasyFiendRenderer;
 import com.beeftaquitos.psychedelicraft.fluid.ModFluids;
 import com.beeftaquitos.psychedelicraft.item.ModItems;
 import com.beeftaquitos.psychedelicraft.painting.ModPaintings;
@@ -16,6 +18,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -28,6 +31,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import software.bernie.geckolib3.GeckoLib;
 
 @Mod(Psychedelicraft.MOD_ID)
 public class Psychedelicraft {
@@ -50,10 +54,12 @@ public class Psychedelicraft {
         ModParticles.register(eventBus);
         ModFluids.register(eventBus);
         ModEnchantments.register(eventBus);
+        ModEntityTypes.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
 
+        GeckoLib.initialize();
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -74,6 +80,8 @@ public class Psychedelicraft {
         ItemBlockRenderTypes.setRenderLayer(ModFluids.SUS_JUICE_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModFluids.SUS_JUICE_FLUID.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModFluids.SUS_JUICE_FLOWING.get(), RenderType.translucent());
+
+        EntityRenderers.register(ModEntityTypes.ECSTASY_FIEND.get(), EcstasyFiendRenderer::new);
 
         MenuScreens.register(ModMenuTypes.DRYING_TABLE_MENU.get(), DryingTableScreen::new);
         MenuScreens.register(ModMenuTypes.SHROOM_BOX_MENU.get(), ShroomBoxScreen::new);

@@ -2,6 +2,7 @@ package com.beeftaquitos.psychedelicraft.item;
 
 import com.beeftaquitos.psychedelicraft.Psychedelicraft;
 import com.beeftaquitos.psychedelicraft.block.ModBlocks;
+import com.beeftaquitos.psychedelicraft.entity.ModEntityTypes;
 import com.beeftaquitos.psychedelicraft.fluid.ModFluids;
 import com.beeftaquitos.psychedelicraft.item.custom.*;
 import com.beeftaquitos.psychedelicraft.sound.ModSounds;
@@ -11,6 +12,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
@@ -159,6 +161,19 @@ public class ModItems {
 
     public static final RegistryObject<Item> SUS_JUICE_BUCKET = ITEMS.register("sus_juice_bucket",
             () -> new BucketItem(ModFluids.SUS_JUICE_FLUID, new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> ECSTASY = ITEMS.register("ecstasy",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).food(ModFoods.ECSTASY)));
+
+    public static final RegistryObject<Item> WARIO_ECSTASY = ITEMS.register("wario_ecstasy",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB).food(ModFoods.WARIO_ECSTASY)));
+
+
+    public static final RegistryObject<Item> ECSTASY_FIEND_SPAWN_EGG = ITEMS.register("ecstasy_fiend_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.ECSTASY_FIEND,0x948e8d, 0x3b3635,
+                    new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
+
+
 
 
 
