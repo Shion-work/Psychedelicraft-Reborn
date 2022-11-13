@@ -98,5 +98,7 @@
 
   "itemGroup.psychedelicrafttab": "Psychedelicraft Reborn",
 
-  "sounds.psychedelicraft.mogus_break": "Mogus Break"
+  "sounds.psychedelicraft.mogus_break": "Mogus Break",
+
+  "entity.minecraft.villager.psychedelicraft.dealer": "Dealer"
 }

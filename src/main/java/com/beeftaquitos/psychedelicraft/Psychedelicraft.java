@@ -14,6 +14,7 @@ import com.beeftaquitos.psychedelicraft.potion.ModPotions;
 import com.beeftaquitos.psychedelicraft.recipe.ModRecipes;
 import com.beeftaquitos.psychedelicraft.screen.*;
 import com.beeftaquitos.psychedelicraft.sound.ModSounds;
+import com.beeftaquitos.psychedelicraft.villager.ModVillagers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -55,6 +56,7 @@ public class Psychedelicraft {
         ModFluids.register(eventBus);
         ModEnchantments.register(eventBus);
         ModEntityTypes.register(eventBus);
+        ModVillagers.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
@@ -91,10 +93,12 @@ public class Psychedelicraft {
     private void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.MOGUS_FLOWER.getId(), ModBlocks.POTTED_MOGUS_FLOWER);
-        });
 
-        BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Items.WHEAT), new ItemStack(ModItems.FERMENTED_WHEAT.get()));
-        BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Items.SWEET_BERRIES), new ItemStack(ModItems.FERMENTED_SWEET_BERRIES.get()));
-        BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Items.SUGAR_CANE), new ItemStack(ModItems.FERMENTED_SUGAR_CANE.get()));
+            ModVillagers.registerPOIs();
+
+            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Items.WHEAT), new ItemStack(ModItems.FERMENTED_WHEAT.get()));
+            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Items.SWEET_BERRIES), new ItemStack(ModItems.FERMENTED_SWEET_BERRIES.get()));
+            BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Items.SUGAR_CANE), new ItemStack(ModItems.FERMENTED_SUGAR_CANE.get()));
+        });
     }
 }
