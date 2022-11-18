@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GSG",
+    "SSS",
+    "GSG"
+  ],
+  "key": {
+    "S": {
+      "item": "psychedelicraft:suspicious_shard"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "psychedelicraft:gold_plated_mogus"
+  }
+}

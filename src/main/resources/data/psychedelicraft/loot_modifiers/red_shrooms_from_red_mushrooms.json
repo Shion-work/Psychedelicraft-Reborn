@@ -1,0 +1,10 @@
+{
+  "conditions": [
+    {
+      "condition": "block_state_property",
+      "block": "minecraft:red_mushroom_block"
+    }
+  ],
+  "addition": "psychedelicraft:red_shroom",
+  "type": "psychedelicraft:red_shrooms_from_red_mushrooms"
+}

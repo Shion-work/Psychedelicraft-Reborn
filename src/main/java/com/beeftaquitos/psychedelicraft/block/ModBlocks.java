@@ -139,6 +139,10 @@ public class ModBlocks {
             () -> new SaplingBlock(new MogusTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).sound(ModSounds.MOGUS_SOUNDS)),
             ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
 
+    public static final RegistryObject<Block> SUSPICIOUS_ORE = registerBlock("suspicious_ore",
+            () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(5f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)), ModCreativeModeTab.PSYCHEDELICRAFT_TAB);
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {

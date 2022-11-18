@@ -173,9 +173,8 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntityTypes.ECSTASY_FIEND,0x948e8d, 0x3b3635,
                     new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
 
-
-
-
+    public static final RegistryObject<Item> SUSPICIOUS_SHARD = ITEMS.register("suspicious_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PSYCHEDELICRAFT_TAB)));
 
 
     public static void register(IEventBus eventBus) {

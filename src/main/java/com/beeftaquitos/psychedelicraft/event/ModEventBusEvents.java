@@ -48,7 +48,13 @@ public class ModEventBusEvents {
                         (new ResourceLocation(Psychedelicraft.MOD_ID,"sbob_music_disc_in_shipwreck_treasure")),
 
                 new EnjoyMinecraftMusicDiscInEndCityTreasureAdditionModifier.Serializer().setRegistryName
-                        (new ResourceLocation(Psychedelicraft.MOD_ID,"enjoy_minecraft_music_disc_in_end_city_treasure"))
+                        (new ResourceLocation(Psychedelicraft.MOD_ID,"enjoy_minecraft_music_disc_in_end_city_treasure")),
+
+                new RedShroomsFromRedMushroomsAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Psychedelicraft.MOD_ID,"red_shrooms_from_red_mushrooms")),
+
+                new BrownShroomsFromBrownMushroomsAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Psychedelicraft.MOD_ID,"brown_shrooms_from_brown_mushrooms"))
         );
     }
 
@@ -70,5 +76,4 @@ public class ModEventBusEvents {
     public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
         event.put(ModEntityTypes.ECSTASY_FIEND.get(), EcstasyFiendEntity.setAttributes());
     }
-
 }

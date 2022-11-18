@@ -17,4 +17,8 @@ public class ModPlacedFeatures {
     public static final Holder<PlacedFeature> CHRYSOTILE_PLACED = PlacementUtils.register("chrysotile_placed",
             ModConfiguredFeatures.CHRYSOTILE, ModOrePlacement.commonOrePlacement(7, // VeinsPerChunk
                     HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
+
+    public static final Holder<PlacedFeature> SUSPICIOUS_ORE_PLACED = PlacementUtils.register("suspicious_ore_placed",
+            ModConfiguredFeatures.SUSPICIOUS_ORE, ModOrePlacement.commonOrePlacement(7, // VeinsPerChunk
+                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
 }

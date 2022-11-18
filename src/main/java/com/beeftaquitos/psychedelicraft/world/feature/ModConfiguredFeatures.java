@@ -5,6 +5,7 @@ import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
@@ -14,6 +15,8 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlac
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
+
 import java.util.List;
 
 public class ModConfiguredFeatures {
@@ -42,7 +45,12 @@ public class ModConfiguredFeatures {
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.CHRYSOTILE.get().defaultBlockState()),
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.CHRYSOTILE.get().defaultBlockState()));
 
+    public static final List<OreConfiguration.TargetBlockState> SUSPICIOUS_ORES = List.of(
+            OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE), ModBlocks.SUSPICIOUS_ORE.get().defaultBlockState()));
+
     public static final Holder<ConfiguredFeature<OreConfiguration, ?>> CHRYSOTILE = FeatureUtils.register("chrysotile",
             Feature.ORE, new OreConfiguration(OVERWORLD_CHRYSOTILE, 9));
 
+    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> SUSPICIOUS_ORE = FeatureUtils.register("suspicious_ore",
+            Feature.ORE, new OreConfiguration(SUSPICIOUS_ORES, 9));
 }
